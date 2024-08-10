@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1059403039952",
+    "project_id": "rapid-project-aaa77",
+    "storage_bucket": "rapid-project-aaa77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059403039952:android:739c4b7cc4486dc5420ad5",
+        "android_client_info": {
+          "package_name": "com.example.foodware_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALQ1hPlTPX0PIhLAvuAJ21MsL4SdC79B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
