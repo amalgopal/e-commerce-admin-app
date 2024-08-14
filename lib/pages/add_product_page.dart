@@ -59,17 +59,26 @@ class PageAddProduct extends StatelessWidget {
               ),
             ),
            const SizedBox(height: 20,),
-          const  Row(
+            Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Flexible(child: DropDownBtn()),
-                Flexible(child: DropDownBtn()),
+                Flexible(child: DropDownBtn(item: ['cate1','cate2','cate3','cate4'],selecedtItemText: 'category', onselected: (selectedValue) {  },)),
+                Flexible(child: DropDownBtn(item: ['Brand1','Brand2','Brand3',], selecedtItemText: 'Brand', onselected: (selectedValue ) {  },)),
               ],
             ),
             const SizedBox(height: 20,),
             const Text('Offer Product'),
             const SizedBox(height: 20,),
-           const DropDownBtn()
+            DropDownBtn(item: ['true','false'],selecedtItemText: 'offer product',onselected: (selectedValue){
+              print(selectedValue);
+            },),
+            SizedBox(height: 20,),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.indigo,
+                foregroundColor: Colors.white
+              ),
+            onPressed: (){}, child: Text('Add Product'))
             ],
           ),
         ),

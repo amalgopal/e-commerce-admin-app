@@ -1,10 +1,11 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-
+String? selectedValue;
 class DropDownBtn extends StatelessWidget {
-  const DropDownBtn({
-    super.key,
-  });
+  final List<String> item;
+  final String selecedtItemText;
+  final Function(String?) onselected;
+  const DropDownBtn({  super.key, required this.item, required this.selecedtItemText, required this.onselected,});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +15,13 @@ class DropDownBtn extends StatelessWidget {
               child: DropdownButton2<String>(
                 isExpanded: true,
                 hint: Text(
-                'Select Item',
+                selecedtItemText,
                 style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).hintColor,
                 ),
                 ),
-                items: ['item1','item2','item3','item4']
+                items: item
                   .map((String item) => DropdownMenuItem<String>(
               value: item,
               child: Text(
@@ -31,9 +32,9 @@ class DropDownBtn extends StatelessWidget {
               ),
             ))
                   .toList(),
-                value: 'item1',
+                value: selectedValue,
                 onChanged: (String? value) {
-                 
+                 onselected(value);
                 },
                 buttonStyleData: const ButtonStyleData(
                 padding: EdgeInsets.symmetric(horizontal: 16),

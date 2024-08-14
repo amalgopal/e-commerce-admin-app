@@ -9,15 +9,19 @@ class PageHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title:const Text('Foodware Admin'),
+        backgroundColor: Colors.grey,
+        title:const Text('Foodware Admin',style: TextStyle(fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: ListView.builder(itemCount: 10,
       itemBuilder: (context,index){
-        return ListTile(
-          title: Text('prodect name'),
-          subtitle:const Text('data'),
-          trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.delete)),
+        return Card(
+          elevation: 10,
+          child: ListTile(
+            title: Text('prodect name'),
+            subtitle:const Text('data'),
+            trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.delete,color: Colors.red,)),
+          ),
         );
       }),
       floatingActionButton: FloatingActionButton(onPressed: (){
