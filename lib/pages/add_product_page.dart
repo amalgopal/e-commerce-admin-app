@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:foodware_admin/controllers/home_controller.dart';
 import 'package:foodware_admin/widgets/drop_down_btn.dart';
+import 'package:get/get.dart';
 
 class PageAddProduct extends StatelessWidget {
   const PageAddProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return  GetBuilder<HomeController>(builder: (ctrl){
+      return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_back_ios_new_rounded)),
         title:const Text('Add Product'),
@@ -84,6 +87,7 @@ class PageAddProduct extends StatelessWidget {
         ),
       ) ,
     );
+    });
   }
 }
 

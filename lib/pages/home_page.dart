@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodware_admin/controllers/home_controller.dart';
 import 'package:foodware_admin/pages/add_product_page.dart';
 import 'package:get/get.dart';
 
@@ -7,7 +8,8 @@ class PageHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return GetBuilder<HomeController>(builder: (ctrl){
+      return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
         title:const Text('Foodware Admin',style: TextStyle(fontWeight: FontWeight.bold),),
@@ -30,5 +32,6 @@ class PageHome extends StatelessWidget {
        // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const PageAddProduct()));
       },child:const Icon(Icons.add),),
     );
+    });
   }
 }
